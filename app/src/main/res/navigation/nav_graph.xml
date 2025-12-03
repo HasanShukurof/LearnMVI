@@ -3,24 +3,27 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/imagesFragment">
+    app:startDestination="@id/imageListFragment">
 
     <fragment
-        android:id="@+id/imagesFragment"
-        android:name="com.hasanshukurov.imageswithretrofitapi.view.ImagesFragment"
-        android:label="fragment_images"
-        tools:layout="@layout/fragment_images" >
+        android:id="@+id/imageListFragment"
+        android:name="com.hasanshukurov.imageswithretrofitapi.presentation.images.ImageListFragment"
+        android:label="Images"
+        tools:layout="@layout/fragment_images">
+        
         <action
-            android:id="@+id/action_imagesFragment_to_imageDetailFragment"
+            android:id="@+id/action_imageListFragment_to_imageDetailFragment"
             app:destination="@id/imageDetailFragment" />
     </fragment>
+    
     <fragment
         android:id="@+id/imageDetailFragment"
-        android:name="com.hasanshukurov.imageswithretrofitapi.view.ImageDetailFragment"
-        android:label="fragment_image_detail"
-        tools:layout="@layout/fragment_image_detail" >
+        android:name="com.hasanshukurov.imageswithretrofitapi.presentation.detail.ImageDetailFragment"
+        android:label="Image Detail"
+        tools:layout="@layout/fragment_image_detail">
+        
         <argument
-            android:name="imageArgs"
-            app:argType="com.hasanshukurov.imageswithretrofitapi.data.Images" />
+            android:name="imageId"
+            app:argType="string" />
     </fragment>
 </navigation>
